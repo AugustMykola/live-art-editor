@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "fileName": "sunset-demo.svg",
+  "sourceDataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzIwIiB2aWV3Qm94PSIwIDAgNDgwIDMyMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNreSIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMyYjU4NzYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjdiMjY3Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjMyMCIgZmlsbD0idXJsKCNza3kpIi8+CiAgPGNpcmNsZSBjeD0iMzYwIiBjeT0iOTAiIHI9IjQ2IiBmaWxsPSIjZmZlMDhhIi8+CiAgPHBvbHlnb24gcG9pbnRzPSIwLDMyMCAxNDAsMTUwIDI2MCwzMjAiIGZpbGw9IiMzYTRhNWEiLz4KICA8cG9seWdvbiBwb2ludHM9IjE1MCwzMjAgMzAwLDEyMCA0NzAsMzIwIiBmaWxsPSIjNGY2Mjc0Ii8+CiAgPHJlY3QgeT0iMjg4IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMjYzMjNjIi8+Cjwvc3ZnPg==",
+  "sourceWidth": 480,
+  "sourceHeight": 320,
+  "ops": [
+    {
+      "id": "op-adjust-1",
+      "type": "adjust",
+      "enabled": true,
+      "brightness": 106,
+      "contrast": 112,
+      "saturation": 125
+    },
+    {
+      "id": "op-text-1",
+      "type": "text",
+      "enabled": true,
+      "text": "Loaded from JSON",
+      "x": 240,
+      "y": 250,
+      "fontSize": 34,
+      "color": "#ffffff",
+      "fontFamily": "sans-serif",
+      "align": "center",
+      "bold": true,
+      "italic": false
+    }
+  ]
+}
