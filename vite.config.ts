@@ -6,8 +6,29 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineConfig({
   plugins: [vue(), vuetify({ autoImport: true })],
   server: {
-    // Honour a PORT env var when one is provided (e.g. by tooling), otherwise
-    // fall back to Vite's default.
     port: process.env.PORT ? Number(process.env.PORT) : undefined,
+  },
+  optimizeDeps: {
+    include: [
+      'vuetify/components/VApp',
+      'vuetify/components/VMain',
+      'vuetify/components/VSnackbar',
+      'vuetify/components/VAppBar',
+      'vuetify/components/VIcon',
+      'vuetify/components/VChip',
+      'vuetify/components/VBtn',
+      'vuetify/components/VDivider',
+      'vuetify/components/VMenu',
+      'vuetify/components/VList',
+      'vuetify/components/VCard',
+      'vuetify/components/VBottomNavigation',
+      'vuetify/components/VImg',
+      'vuetify/components/transitions',
+      'vuetify/components/VSelect',
+      'vuetify/components/VTextField',
+      'vuetify/components/VTextarea',
+      'vuetify/components/VSlider',
+      'cropperjs',
+    ],
   },
 })

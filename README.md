@@ -65,9 +65,6 @@ leaves the browser: images are read as data URLs and rendered to `<canvas>` loca
 - **Replay** — `renderPipeline` *is* the interpreter: import and export both speak the same `EditOp` shape, so
   "replay a recipe" is just re-running the pipeline against the same (or a freshly loaded) original image —
   no bespoke replay logic.
-- **Tests** — none yet; this is a real gap compared to a pipeline/filter-builder/JSON-validator this well
-  isolated (all three are pure functions with no framework deps, i.e. straightforward to unit test with Vitest
-  if/when that's added).
 
 ## Tech stack
 
@@ -204,3 +201,11 @@ skipped, the rest still load. See `JsonFormatHelp.vue` for the in-app help popov
   clicked a tab, which is surprising in a stack model where a type can have zero, one, or many ops. Don't
   reintroduce that pattern; op selection/creation should always be an explicit user action (Add Operation, or
   clicking a specific op card).
+- `vite.config.ts`'s `optimizeDeps.include` explicitly lists every `vuetify/components/*` module actually used
+  (plus `cropperjs`). Without it, a freshly started dev server discovers those auto-imported Vuetify components
+  lazily — a few more each time you navigate deeper (home → `/editor` → each tool panel) — triggering a fresh
+  "optimized dependencies changed, reloading" *full page reload* on every discovery. On a cold `npm run dev`
+  that reload can land mid-action (e.g. right as you pick a file in "Open image"), silently dropping it and
+  requiring a retry. If you add a new Vuetify component tag somewhere, add its `vuetify/components/VXxx` entry
+  here too, or the reload storm (and the "first action after starting the dev server does nothing" symptom)
+  comes back. This only affects `npm run dev`; production builds are unaffected.
